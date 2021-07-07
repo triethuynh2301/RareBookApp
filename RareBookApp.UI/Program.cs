@@ -2,13 +2,14 @@
 using RareBookApp.Service;
 using RareBookApp.Service.BookServices.Concrete;
 using RareBookApp.Service.Customer;
-using RareBookApp.Service.Sale_Service;
+using RareBookApp.Service.SaleService;
 using RareBookApp.Service.Customer.Concrete;
-using RareBookApp.Service.Sale_Service.Concrete;
+using RareBookApp.Service.SaleService.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using RareBookApp.Domain;
+using RareBookApp.Service.SaleService.QueryObjects;
 
 namespace RareBookApp.UI
 {
@@ -19,15 +20,20 @@ namespace RareBookApp.UI
         static void Main(string[] args)
         {
             var saleDepartment = new SaleService(_context);
-            var sales = saleDepartment.RetrieveSaleInfoOnCustomerPhoneNum("518-555-9999").ToList();
-            var customer = sales[0].Customer;
+            var filterSortOptions = new SaleSortFilterPageOptions();
+            filterSortOptions.filterOptions = SalesFilterOptions.BySalesTotalAmount;
+            filterSortOptions.sortOptions = SalesSortOptions.BySaleDate;
 
-            foreach (var i in sales)
+            var salesOver100Dollars = saleDepartment
+                            .SalesSortFilter(filterSortOptions, "100")
+                            .ToList();
+
+            Console.WriteLine("Sale order worth over $100:");
+            foreach (var i in salesOver100Dollars)
             {
                 Console.WriteLine($"Customer {i.CustomerNumber} made a purchase total of {i.SalesTotalAmount} on {i.SaleDate}");
                 Console.WriteLine();
             }
-
 
             Console.ReadLine();
         }
