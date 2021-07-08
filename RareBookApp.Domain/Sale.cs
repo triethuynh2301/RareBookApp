@@ -27,6 +27,9 @@ namespace RareBookApp.Domain
         /// </summary>
         public Customer Customer { get; set; }
 
-
+        /// <summary>
+        /// Inverse navigation propery to Volume
+        /// </summary>
+        public Volume Inventory { get; set; }
     }
 }

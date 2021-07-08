@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RareBookApp.UI", "RareBookA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PresentationLayer", "PresentationLayer", "{68341540-4D52-47E7-8A1E-2D236B352748}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RareBookApp.WF", "RareBookApp.WF\RareBookApp.WF.csproj", "{94039EB1-DD86-44EC-B402-B531C972C6F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{096E700A-02E7-4D5A-9199-FBF92661C71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{096E700A-02E7-4D5A-9199-FBF92661C71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{096E700A-02E7-4D5A-9199-FBF92661C71A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94039EB1-DD86-44EC-B402-B531C972C6F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94039EB1-DD86-44EC-B402-B531C972C6F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94039EB1-DD86-44EC-B402-B531C972C6F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94039EB1-DD86-44EC-B402-B531C972C6F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{4FC98179-8697-44A1-8394-9A79A71FAD65} = {A1C8BF66-B5B9-4750-9CDF-478EAC63BF95}
 		{66FDB2BB-8674-43BF-8834-BF6E447F426B} = {9FB47743-100A-4F97-9559-55A090F143FA}
 		{096E700A-02E7-4D5A-9199-FBF92661C71A} = {68341540-4D52-47E7-8A1E-2D236B352748}
+		{94039EB1-DD86-44EC-B402-B531C972C6F0} = {68341540-4D52-47E7-8A1E-2D236B352748}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {203FA0DD-4653-4F22-85D4-EF6719D35E3F}
