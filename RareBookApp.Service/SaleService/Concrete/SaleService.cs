@@ -18,7 +18,7 @@ namespace RareBookApp.Service.SaleService.Concrete
             _context = context;
         }
 
-        public IQueryable<Sale> SalesSortFilter(SaleSortFilterPageOptions options, string filterValue)
+        public IQueryable<Sale> SalesSortFilter(SortFilterPageOptions options, string filterValue)
         {
             var salesQuery = _context.Sales
                                 .FilterSalesBy(options.filterOptions, filterValue)

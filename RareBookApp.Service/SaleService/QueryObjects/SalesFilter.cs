@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RareBookApp.Service.SaleService.QueryObjects
 {
-    public enum SalesFilterOptions
+    public enum FilterOptions
     {
         BySaleId,
         ByCustomerNum,
@@ -17,7 +17,7 @@ namespace RareBookApp.Service.SaleService.QueryObjects
     }
     public static class SalesFilter
     {
-        public static IQueryable<Sale> FilterSalesBy(this IQueryable<Sale> sales, SalesFilterOptions option, string filterValue)
+        public static IQueryable<Sale> FilterSalesBy(this IQueryable<Sale> sales, FilterOptions option, string filterValue)
         {
             // If the filterValue is empty, then there will be no change
             if (string.IsNullOrEmpty(filterValue))
@@ -25,13 +25,13 @@ namespace RareBookApp.Service.SaleService.QueryObjects
 
             switch (option)
             {
-                case SalesFilterOptions.BySaleId:
+                case FilterOptions.BySaleId:
                     return sales.Where(x => x.SaleID == int.Parse(filterValue));
-                case SalesFilterOptions.ByCustomerNum:
+                case FilterOptions.ByCustomerNum:
                     return sales.Where(x => x.CustomerNumber == int.Parse(filterValue));
-                case SalesFilterOptions.BySalesTotalAmount:
+                case FilterOptions.BySalesTotalAmount:
                     return sales.Where(x => x.SalesTotalAmount >= decimal.Parse(filterValue));
-                case SalesFilterOptions.BySaleDate:
+                case FilterOptions.BySaleDate:
                     return sales.Where(x => x.SaleDate == DateTime.Parse(filterValue));
                 default:
                     throw new ArgumentOutOfRangeException(nameof(option), option, null);

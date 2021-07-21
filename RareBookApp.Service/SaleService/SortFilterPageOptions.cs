@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace RareBookApp.Service.SaleService
 {
-    public class SaleSortFilterPageOptions
+    public class SortFilterPageOptions
     {
-        public SalesFilterOptions filterOptions { get; set; }
+        public FilterOptions filterOptions { get; set; }
         public SalesSortOptions sortOptions { get; set; }
         
     }

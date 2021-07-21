@@ -8,4 +8,9 @@
     <ProjectReference Include="..\RareBookApp.Data\RareBookApp.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="AdminService\Concrete\" />
+    <Folder Include="AdminService\QueryObjects\" />
+  </ItemGroup>
+
 </Project>
